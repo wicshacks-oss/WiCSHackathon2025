@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="hero text-center position-relative py-5">
+  <div class="hero-inner">
+    <div class="event-sub">UVA WiCS presents</div>
+    <h1 class="hero-title">Hack to the Beat</h1>
+    <div class="event-date">Coming February 21 - 22, 2026</div>
+
+    <div class="countdown mt-4">
+      <div id="countdown">00 : 00 : 00 : 00</div>
+    </div>
+
+    <div class="hero-ctas mt-4">
+      <a class="btn btn-primary" href="/schedule">See Schedule</a>
+      <a class="btn btn-outline-secondary" href="/faq">FAQ</a>
+    </div>
+  </div>
+
+  <!-- Vinyl SVG positioned as background element -->
+  <img src="/static/img/vinyl.svg" alt="vinyl" class="vinyl-art" aria-hidden="true"/>
+</section>
+
+<div class="row mt-4">
+  <div class="col-md-8">
+    <h3 class="mt-4">Project Stacks (hover to expand)</h3>
+    <div class="stack-grid">
+      <div class="stack-card">Python<br><small>Flask, Pandas</small></div>
+      <div class="stack-card">JavaScript<br><small>React, Node</small></div>
+      <div class="stack-card">Mobile<br><small>Flutter</small></div>
+      <div class="stack-card">Data<br><small>ML, SQL</small></div>
+    </div>
+
+    <h3 class="mt-5">Sponsors</h3>
+    <div class="sponsors-scroll" aria-label="sponsors carousel">
+      <div class="sponsor">Sponsor A</div>
+      <div class="sponsor">Sponsor B</div>
+      <div class="sponsor">Sponsor C</div>
+      <div class="sponsor">Sponsor D</div>
+      <div class="sponsor">Sponsor E</div>
+      <div class="sponsor">Sponsor F</div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card mb-3 p-3">
+      <h5>Attendees</h5>
+      <p>Total registered: <strong id="attendees-total">—</strong></p>
+      <canvas id="demographicsChart" width="300" height="200"></canvas>
+    </div>
+
+    <div class="card p-3">
+      <h5>Quick links</h5>
+      <ul>
+        <li><a href="/developers">For Developers</a></li>
+        <li><a href="/location">Location</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

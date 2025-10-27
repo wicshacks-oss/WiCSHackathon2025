@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="44" viewBox="0 0 140 44">
+  <rect width="140" height="44" fill="#800000" rx="6"/>
+  <text x="12" y="28" font-family="Inter, Arial, sans-serif" font-size="16" fill="#fff" font-weight="700">WiCS</text>
+  <text x="70" y="28" font-family="Inter, Arial, sans-serif" font-size="10" fill="#fff">Hack to the Beat</text>
+</svg>
