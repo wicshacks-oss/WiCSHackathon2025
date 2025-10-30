@@ -14,18 +14,14 @@
     <header class="top-banner d-flex align-items-center justify-content-between px-3">
       <div class="d-flex align-items-center gap-2">
         <img src="/static/img/logo.svg" alt="logo" class="site-logo"/>
-        <div class="small-brand">UVA WiCS</div>
       </div>
-      <div class="banner-title">Hack to the Beat</div>
-      <div>
-        <a class="btn btn-register" href="#register">REGISTER HERE</a>
-      </div>
-    </header>
+      <!-- <div class="banner-title">Hack to the Beat</div> -->
 
-    <!-- Navigation bar (sticky) -->
-    <nav class="navbar navbar-expand-lg sticky-top">
-      <div class="container-fluid px-3">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg top-nav">
+      <div class="container-fluid px-0">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarsExample07" aria-controls="navbarsExample07"
+                aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -35,12 +31,19 @@
             <li class="nav-item"><a class="nav-link" href="/faq">FAQ</a></li>
             <li class="nav-item"><a class="nav-link" href="/schedule">Schedule</a></li>
             <li class="nav-item"><a class="nav-link" href="/location">Location</a></li>
-            <li class="nav-item"><a class="nav-link" href="/sponsors">Sponsors</a></li>
-            <li class="nav-item"><a class="nav-link" href="/developers">Developers</a></li>
+            <!-- <li class="nav-item"><a class="nav-link" href="/sponsors">Sponsors</a></li> -->
+            <!-- <li class="nav-item"><a class="nav-link" href="/developers">Our Team</a></li> -->
           </ul>
+
+          <a class="btn btn-register" href="#register">REGISTER HERE</a>
+
         </div>
       </div>
     </nav>
+
+    </header>
+
+
 
     <main class="container my-4">
       {% block content %}{% endblock %}
