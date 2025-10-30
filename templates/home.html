@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section class="hero text-center position-relative py-5">
+<section class="hero full-bleed text-center position-relative py-5">
   <div class="hero-inner">
-    <div class="event-sub">UVA WiCS presents</div>
-    <h1 class="hero-title">Hack to the Beat</h1>
-    <div class="event-date">Coming February 21 - 22, 2026</div>
+    <!-- <div class="event-sub">UVA WiCS presents</div> -->
+    <img src="/static/img/wics_presents.svg" alt="subtitle" class="site-subtitle"/>
+    
+    <!-- <h1 class="hero-title">Hack to the Beat</h1> -->
+    <img src="/static/img/hack_2_beat.svg" alt="title" class="site-title"/>
+    <div class="event-date">Coming February 21st - 22nd, 2026</div>
 
     <div class="countdown mt-4">
       <div id="countdown">00 : 00 : 00 : 00</div>
@@ -23,6 +26,7 @@
 
 <div class="row mt-4">
   <div class="col-md-8">
+<!--
     <h3 class="mt-4">Project Stacks (hover to expand)</h3>
     <div class="stack-grid">
       <div class="stack-card">Python<br><small>Flask, Pandas</small></div>
@@ -30,7 +34,9 @@
       <div class="stack-card">Mobile<br><small>Flutter</small></div>
       <div class="stack-card">Data<br><small>ML, SQL</small></div>
     </div>
+-->
 
+<!--
     <h3 class="mt-5">Sponsors</h3>
     <div class="sponsors-scroll" aria-label="sponsors carousel">
       <div class="sponsor">Sponsor A</div>
@@ -42,6 +48,9 @@
     </div>
   </div>
 
+-->
+
+<!--
   <div class="col-md-4">
     <div class="card mb-3 p-3">
       <h5>Attendees</h5>
@@ -57,6 +66,7 @@
       </ul>
     </div>
   </div>
+-->
 </div>
 
 {% endblock %}

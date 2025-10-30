@@ -5,11 +5,49 @@
 	--muted: #f5f5f5;
 	--card-border: rgba(0,0,0,0.06);
 }
+/* THIS IS ONLY TO PREVENT SCROLLING REMOVE WHEN WE ADD MORE ELEMENTS */ 
+html, body { height: 100%; overflow: hidden; }
 
-body{font-family:Inter, system-ui, Arial, sans-serif;background:var(--white);color:var(--black)}
+body {
+	font-family: Inter, system-ui, Arial, sans-serif;
+	background: rgb(224, 224, 224);
+	color: var(--black);
+	margin: 0;
+}
+
+.site-title {
+	width: 70%;
+	display: block;
+	position: relative;
+	z-index: 4;
+	height: auto;
+	margin: 0 auto;
+	margin-top: -50px;
+}
+
+.site-subtitle {
+	width: 15%;
+	display: block;
+	position: relative;
+	z-index: 4;
+	height: auto;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+/* full-bleed section inside a .container layout */
+.full-bleed{
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
 
 /* Navbar override: maroon background, white links */
-.navbar{background:var(--maroon)!important}
+.navbar {
+	background:transparent!important;
+	margin-top: -4px;
+}
 .navbar .navbar-brand, .navbar .nav-link{color:var(--white) !important}
 .navbar .nav-link:hover{opacity:0.9}
 
@@ -44,22 +82,50 @@ body{font-family:Inter, system-ui, Arial, sans-serif;background:var(--white);col
 .card p{margin:0}
 
 /* Top banner styles */
-.top-banner{background:var(--maroon);color:var(--white);height:72px;display:flex;align-items:center}
-.top-banner .site-logo{height:44px}
+.top-banner{background:#6d0000;color:var(--white);height:72px;display:flex;align-items:center}
+.top-banner .site-logo{
+	height:80px;
+}
 .top-banner .banner-title{font-family:'Lobster', cursive;font-size:34px;color:var(--white);letter-spacing:1px}
 .top-banner .small-brand{font-size:12px;opacity:0.9}
-.btn-register{background:transparent;border:2px solid var(--white);color:var(--white);font-weight:700}
+.btn-register{
+	background:transparent;
+	border:2px solid var(--white);
+	color:var(--white);
+	margin-left: 30px;
+	font-weight:700
+}
 .btn-register:hover{background:var(--white);color:var(--maroon)}
 
 /* Hero */
-.hero{min-height:420px;overflow:visible;background:linear-gradient(180deg,#fff,#f7f7f7);position:relative}
-.hero-inner{position:relative;z-index:3}
-.hero-title{font-family:'Lobster',cursive;font-size:88px;color:var(--maroon);margin:0}
-.event-sub{font-weight:700;color:#3a3a3a;letter-spacing:1px}
-.event-date{color:#222;margin-top:8px;font-weight:600}
-.countdown #countdown{font-family:monospace;font-size:34px;letter-spacing:6px;color:var(--black)}
+.hero{
+	min-height:420px;
+	overflow:visible;
+	position:relative
+}
 
-.vinyl-art{position:absolute;left:50%;transform:translateX(-50%);bottom:-120px;width:900px;opacity:0.95;z-index:1}
+.hero-inner{
+	position:relative;
+	z-index:3;
+}
+.hero-title{font-family:'Lobster',cursive;font-size:88px;color:var(--maroon);margin:0}
+.event-sub{font-size: 170%;font-weight:700;color:#3a3a3a;letter-spacing:1px}
+.event-date{color:#222;margin-top:8px;font-weight:600}
+.countdown #countdown{font-family:monospace;font-size:34px;font-weight: 900;letter-spacing:6px;color:var(--black)}
+
+.vinyl-art{
+	position: absolute;       /* <- needed for centering with left+transform */
+  	left: 50%;
+	top: 100%;
+  	transform: translateX(-50%);
+  	bottom: -10vh;            /* adjust as you like */
+  	width: 50vw;
+  	max-width: 10900px;
+  	opacity: 0.95;
+  	z-index: 1;
+  	display: block;           /* avoids inline baseline quirks */
+  	pointer-events: none;
+}
 
 /* Slight adjustments for mobile */
 @media(max-width:767px){
