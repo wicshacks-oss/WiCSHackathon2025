@@ -4,10 +4,19 @@
 <section class="hero full-bleed text-center position-relative py-5">
   <div class="hero-inner">
     <!-- <div class="event-sub">UVA WiCS presents</div> -->
-    <img src="/static/img/wics_presents.svg" alt="subtitle" class="site-subtitle"/>
+    <!-- <img src="/static/img/wics_presents.svg" alt="subtitle" class="site-subtitle"/> -->
+    
+    <img src="{{ url_for('static', filename='img/wics_presents.svg') }}"
+         alt="UVA WiCS presents"
+         class="site-subtitle"/>
+
     
     <!-- <h1 class="hero-title">Hack to the Beat</h1> -->
-    <img src="/static/img/hack_2_beat.svg" alt="title" class="site-title"/>
+    <!-- <img src="/static/img/hack_2_beat.svg" alt="title" class="site-title"/> -->
+    <img src="{{ url_for('static', filename='img/hack_2_beat.svg') }}"
+         alt="Hack to the Beat"
+         class="site-title"/>
+
     <div class="event-date">Coming February 21st - 22nd, 2026</div>
 
     <div class="countdown mt-4">
@@ -15,13 +24,20 @@
     </div>
 
     <div class="hero-ctas mt-4">
-      <a class="btn btn-primary" href="/schedule">See Schedule</a>
-      <a class="btn btn-outline-secondary" href="/faq">FAQ</a>
+      <!-- <a class="btn btn-primary" href="/schedule">See Schedule</a> -->
+      <a class="btn btn-primary" href="{{ url_for('schedule') }}">See Schedule</a>
+      <!-- <a class="btn btn-outline-secondary" href="/faq">FAQ</a> -->
+      <a class="btn btn-outline-secondary" href="{{ url_for('faq') }}">FAQ</a>
     </div>
   </div>
 
   <!-- Vinyl SVG positioned as background element -->
-  <img src="/static/img/vinyl.svg" alt="vinyl" class="vinyl-art" aria-hidden="true"/>
+  <!-- <img src="/static/img/vinyl.svg" alt="vinyl" class="vinyl-art" aria-hidden="true"/> -->
+  <img src="{{ url_for('static', filename='img/vinyl.svg') }}"
+       alt=""
+       class="vinyl-art"
+       aria-hidden="true">
+
 </section>
 
 <div class="row mt-4">

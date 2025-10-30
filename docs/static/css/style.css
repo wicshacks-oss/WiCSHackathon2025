@@ -1,0 +1,136 @@
+:root{
+	--maroon: #800000; /* primary accent */
+	--black: #000000;
+	--white: #ffffff;
+	--muted: #f5f5f5;
+	--card-border: rgba(0,0,0,0.06);
+}
+/* THIS IS ONLY TO PREVENT SCROLLING REMOVE WHEN WE ADD MORE ELEMENTS */ 
+html, body { height: 100%; overflow: hidden; }
+
+body {
+	font-family: Inter, system-ui, Arial, sans-serif;
+	background: rgb(224, 224, 224);
+	color: var(--black);
+	margin: 0;
+}
+
+.site-title {
+	width: 70%;
+	display: block;
+	position: relative;
+	z-index: 4;
+	height: auto;
+	margin: 0 auto;
+	margin-top: -50px;
+}
+
+.site-subtitle {
+	width: 15%;
+	display: block;
+	position: relative;
+	z-index: 4;
+	height: auto;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+/* full-bleed section inside a .container layout */
+.full-bleed{
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+
+/* Navbar override: maroon background, white links */
+.navbar {
+	background:transparent!important;
+	margin-top: -4px;
+}
+.navbar .navbar-brand, .navbar .nav-link{color:var(--white) !important}
+.navbar .nav-link:hover{opacity:0.9}
+
+.jumbotron{background:linear-gradient(90deg, rgba(128,0,0,0.06), transparent);border:1px solid var(--card-border)}
+
+/* Stack cards */
+.stack-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.stack-card{background:var(--white);border:1px solid var(--card-border);padding:18px;border-radius:8px;box-shadow:0 8px 18px rgba(0,0,0,0.03);transition:transform .18s ease,box-shadow .18s ease,border-color .15s ease;cursor:pointer}
+.stack-card:hover{transform:translateY(-6px) scale(1.03);box-shadow:0 20px 40px rgba(0,0,0,0.08);border-color:var(--maroon)}
+.stack-card small{color:#444}
+
+/* Sponsors scroller */
+.sponsors-scroll{display:flex;gap:12px;overflow:auto;padding:12px 6px}
+.sponsor{min-width:140px;background:var(--muted);border:1px solid rgba(0,0,0,0.08);padding:18px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--black);font-weight:600}
+.sponsors-scroll.big .sponsor{min-width:220px;padding:28px;font-weight:700;background:linear-gradient(90deg, rgba(128,0,0,0.06), transparent)}
+
+/* make scrollbar thin */
+.sponsors-scroll::-webkit-scrollbar{height:10px}
+.sponsors-scroll::-webkit-scrollbar-thumb{background:rgba(0,0,0,0.12);border-radius:6px}
+
+/* Buttons */
+.btn-primary{background:var(--maroon);border-color:var(--maroon)}
+.btn-primary:hover{background:#6a0000;border-color:#6a0000}
+
+/* Cards and quick links */
+.card{border:1px solid var(--card-border)}
+
+/* responsive */
+@media(min-width:768px){.stack-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:767px){.stack-grid{grid-template-columns:repeat(1,1fr)}}
+
+.card p{margin:0}
+
+/* Top banner styles */
+.top-banner{background:#6d0000;color:var(--white);height:72px;display:flex;align-items:center}
+.top-banner .site-logo{
+	height:80px;
+}
+.top-banner .banner-title{font-family:'Lobster', cursive;font-size:34px;color:var(--white);letter-spacing:1px}
+.top-banner .small-brand{font-size:12px;opacity:0.9}
+.btn-register{
+	background:transparent;
+	border:2px solid var(--white);
+	color:var(--white);
+	margin-left: 30px;
+	font-weight:700
+}
+.btn-register:hover{background:var(--white);color:var(--maroon)}
+
+/* Hero */
+.hero{
+	min-height:420px;
+	overflow:visible;
+	position:relative
+}
+
+.hero-inner{
+	position:relative;
+	z-index:3;
+}
+.hero-title{font-family:'Lobster',cursive;font-size:88px;color:var(--maroon);margin:0}
+.event-sub{font-size: 170%;font-weight:700;color:#3a3a3a;letter-spacing:1px}
+.event-date{color:#222;margin-top:8px;font-weight:600}
+.countdown #countdown{font-family:monospace;font-size:34px;font-weight: 900;letter-spacing:6px;color:var(--black)}
+
+.vinyl-art{
+	position: absolute;       /* <- needed for centering with left+transform */
+  	left: 50%;
+	top: 100%;
+  	transform: translateX(-50%);
+  	bottom: -10vh;            /* adjust as you like */
+  	width: 50vw;
+  	max-width: 10900px;
+  	opacity: 0.95;
+  	z-index: 1;
+  	display: block;           /* avoids inline baseline quirks */
+  	pointer-events: none;
+}
+
+/* Slight adjustments for mobile */
+@media(max-width:767px){
+	.hero-title{font-size:40px}
+	.vinyl-art{width:520px;bottom:-80px}
+	.top-banner{height:62px}
+}
+

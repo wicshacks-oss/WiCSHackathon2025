@@ -11,15 +11,15 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     -->
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="../static/js/main.js"></script>
   </head>
   <body>
     <!-- Top banner: logo left, event title center, register right -->
     <header class="top-banner d-flex align-items-center justify-content-between px-3">
       <div class="d-flex align-items-center gap-2">
         <!-- <img src="/static/img/logo.svg" alt="logo" class="site-logo"/> -->
-        <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="logo"/>
+        <img src="../static/img/logo.svg" alt="logo"/>
       </div>
       <!-- <div class="banner-title">Hack to the Beat</div> -->
 
@@ -40,10 +40,10 @@
             <li class="nav-item"><a class="nav-link" href="/location/">Location</a></li>
             -->
             
-            <li class="nav-link" href="{{ url_for('home') }}">Home</li>
-            <li class="nav-link" href="{{ url_for('faq') }}">FAQ</li>
-            <li class="nav-link" href="{{ url_for('schedule') }}">Schedule</li>
-            <li class="nav-link" href="{{ url_for('location') }}">Location</li>
+            <li class="nav-link" href="../index.html">Home</li>
+            <li class="nav-link" href="../faq/index.html">FAQ</li>
+            <li class="nav-link" href="index.html">Schedule</li>
+            <li class="nav-link" href="../location/index.html">Location</li>
 
 
 
@@ -62,7 +62,21 @@
 
 
     <main class="container my-4">
-      {% block content %}{% endblock %}
+      
+<h2>Schedule</h2>
+<!--
+<ul class="list-group">
+  <li class="list-group-item"><strong>09:00</strong> — Registration & Breakfast</li>
+  <li class="list-group-item"><strong>10:00</strong> — Opening Remarks</li>
+  <li class="list-group-item"><strong>11:00</strong> — Team Formation / Hacking Begins</li>
+  <li class="list-group-item"><strong>18:00</strong> — Dinner</li>
+  <li class="list-group-item"><strong>22:00</strong> — Checkpoint & Mentoring</li>
+  <li class="list-group-item"><strong>09:00 (next day)</strong> — Final Pitches</li>
+</ul>
+-->
+<h1> </h1>
+<h5> Coming Soon! </h5>
+
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

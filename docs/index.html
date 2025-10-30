@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WiCS Hackathon</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!--
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    -->
+
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="static/js/main.js"></script>
+  </head>
+  <body>
+    <!-- Top banner: logo left, event title center, register right -->
+    <header class="top-banner d-flex align-items-center justify-content-between px-3">
+      <div class="d-flex align-items-center gap-2">
+        <!-- <img src="/static/img/logo.svg" alt="logo" class="site-logo"/> -->
+        <img src="static/img/logo.svg" alt="logo"/>
+      </div>
+      <!-- <div class="banner-title">Hack to the Beat</div> -->
+
+    <nav class="navbar navbar-expand-lg top-nav">
+      <div class="container-fluid px-0">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarsExample07" aria-controls="navbarsExample07"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample07">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <!--
+            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="/faq/">FAQ</a></li>
+            <li class="nav-item"><a class="nav-link" href="/schedule/">Schedule</a></li>
+            <li class="nav-item"><a class="nav-link" href="/location/">Location</a></li>
+            -->
+            
+            <li class="nav-link" href="index.html">Home</li>
+            <li class="nav-link" href="faq/index.html">FAQ</li>
+            <li class="nav-link" href="schedule/index.html">Schedule</li>
+            <li class="nav-link" href="location/index.html">Location</li>
+
+
+
+            <!-- <li class="nav-item"><a class="nav-link" href="/sponsors">Sponsors</a></li> -->
+            <!-- <li class="nav-item"><a class="nav-link" href="/developers">Our Team</a></li> -->
+          </ul>
+
+          <a class="btn btn-register" href="#register">REGISTER HERE</a>
+
+        </div>
+      </div>
+    </nav>
+
+    </header>
+
+
+
+    <main class="container my-4">
+      
+<section class="hero full-bleed text-center position-relative py-5">
+  <div class="hero-inner">
+    <!-- <div class="event-sub">UVA WiCS presents</div> -->
+    <!-- <img src="/static/img/wics_presents.svg" alt="subtitle" class="site-subtitle"/> -->
+    
+    <img src="static/img/wics_presents.svg"
+         alt="UVA WiCS presents"
+         class="site-subtitle"/>
+
+    
+    <!-- <h1 class="hero-title">Hack to the Beat</h1> -->
+    <!-- <img src="/static/img/hack_2_beat.svg" alt="title" class="site-title"/> -->
+    <img src="static/img/hack_2_beat.svg"
+         alt="Hack to the Beat"
+         class="site-title"/>
+
+    <div class="event-date">Coming February 21st - 22nd, 2026</div>
+
+    <div class="countdown mt-4">
+      <div id="countdown">00 : 00 : 00 : 00</div>
+    </div>
+
+    <div class="hero-ctas mt-4">
+      <!-- <a class="btn btn-primary" href="/schedule">See Schedule</a> -->
+      <a class="btn btn-primary" href="schedule/index.html">See Schedule</a>
+      <!-- <a class="btn btn-outline-secondary" href="/faq">FAQ</a> -->
+      <a class="btn btn-outline-secondary" href="faq/index.html">FAQ</a>
+    </div>
+  </div>
+
+  <!-- Vinyl SVG positioned as background element -->
+  <!-- <img src="/static/img/vinyl.svg" alt="vinyl" class="vinyl-art" aria-hidden="true"/> -->
+  <img src="static/img/vinyl.svg"
+       alt=""
+       class="vinyl-art"
+       aria-hidden="true">
+
+</section>
+
+<div class="row mt-4">
+  <div class="col-md-8">
+<!--
+    <h3 class="mt-4">Project Stacks (hover to expand)</h3>
+    <div class="stack-grid">
+      <div class="stack-card">Python<br><small>Flask, Pandas</small></div>
+      <div class="stack-card">JavaScript<br><small>React, Node</small></div>
+      <div class="stack-card">Mobile<br><small>Flutter</small></div>
+      <div class="stack-card">Data<br><small>ML, SQL</small></div>
+    </div>
+-->
+
+<!--
+    <h3 class="mt-5">Sponsors</h3>
+    <div class="sponsors-scroll" aria-label="sponsors carousel">
+      <div class="sponsor">Sponsor A</div>
+      <div class="sponsor">Sponsor B</div>
+      <div class="sponsor">Sponsor C</div>
+      <div class="sponsor">Sponsor D</div>
+      <div class="sponsor">Sponsor E</div>
+      <div class="sponsor">Sponsor F</div>
+    </div>
+  </div>
+
+-->
+
+<!--
+  <div class="col-md-4">
+    <div class="card mb-3 p-3">
+      <h5>Attendees</h5>
+      <p>Total registered: <strong id="attendees-total">—</strong></p>
+      <canvas id="demographicsChart" width="300" height="200"></canvas>
+    </div>
+
+    <div class="card p-3">
+      <h5>Quick links</h5>
+      <ul>
+        <li><a href="/developers">For Developers</a></li>
+        <li><a href="/location">Location</a></li>
+      </ul>
+    </div>
+  </div>
+-->
+</div>
+
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/main.js"></script>
+  </body>
+</html>
