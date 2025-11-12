@@ -6,7 +6,8 @@
 	--card-border: rgba(0,0,0,0.06);
 }
 /* THIS IS ONLY TO PREVENT SCROLLING REMOVE WHEN WE ADD MORE ELEMENTS */ 
-html, body { height: 100%; overflow: hidden; }
+/* html, body { height: 100%; overflow: hidden; } */
+
 
 body {
 	font-family: Inter, system-ui, Arial, sans-serif;
@@ -25,15 +26,29 @@ body {
 	margin-top: -50px;
 }
 
-.site-subtitle {
-	width: 15%;
-	display: block;
-	position: relative;
-	z-index: 4;
-	height: auto;
-	margin: 0 auto;
-	margin-top: 20px;
+/* 2) Normalize both SVGs: block, responsive, same alignment */
+.site-subtitle,
+.site-title{
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  line-height: 1;                 /* kill extra inline image space */
 }
+/* 3) Scale them with sensible, linked widths (no negative margins) */
+.site-subtitle{                   /* black “UVA WiCS PRESENTS:” */
+	width: clamp(220px, 36vw, 520px);
+}
+
+.site-title{                      /* red “Hack to the Beat” */
+	width: clamp(320px, 82vw, 1280px);
+	margin-top: 0;                  /* remove -50px pull-up */
+  }
+  
+  /* 4) Give the hero breathing room below the maroon top banner */
+  .hero{ padding-top: clamp(56px, 10vh, 96px); 
+
+}
+
 
 /* full-bleed section inside a .container layout */
 .full-bleed{
@@ -104,10 +119,19 @@ body {
 	position:relative
 }
 
+/* 1) Make the hero stack and control spacing */
 .hero-inner{
-	position:relative;
-	z-index:3;
+	position: relative;
+	z-index: 3;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: clamp(2px, 0.8vw, 14px);   /* was ~1.6vw–28px */
 }
+.site-subtitle{ margin-top: 0; }   /* ensure no extra space */
+.site-title{    margin-top: 0; }
+
 .hero-title{font-family:'Lobster',cursive;font-size:88px;color:var(--maroon);margin:0}
 .event-sub{font-size: 170%;font-weight:700;color:#3a3a3a;letter-spacing:1px}
 .event-date{color:#222;margin-top:8px;font-weight:600}
