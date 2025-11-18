@@ -7,7 +7,16 @@
 }
 /* THIS IS ONLY TO PREVENT SCROLLING REMOVE WHEN WE ADD MORE ELEMENTS */ 
 /* html, body { height: 100%; overflow: hidden; } */
+/* Allow vertical scroll; hide only horizontal overflow */
+html, body {
+	height: auto;
+	overflow-y: auto;
+	overflow-x: hidden;   /* prevents tiny 100vw overhangs on phones */
+  }
+  
 
+/* --- Global/mobile sanity --- */
+* { box-sizing: border-box; } 
 
 body {
 	font-family: Inter, system-ui, Arial, sans-serif;
@@ -50,11 +59,14 @@ body {
 }
 
 
-/* full-bleed section inside a .container layout */
+/* If you used .full-bleed, keep it from causing horizontal scroll */
 .full-bleed{
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+	width: 100vw;
+	position: relative;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
 }
 
 
@@ -131,12 +143,19 @@ body {
 }
 .site-subtitle{ margin-top: 0; }   /* ensure no extra space */
 .site-title{    margin-top: 0; }
+.site-subtitle, .site-title { max-width: 100%; height: auto; }
 
 .hero-title{font-family:'Lobster',cursive;font-size:88px;color:var(--maroon);margin:0}
 .event-sub{font-size: 170%;font-weight:700;color:#3a3a3a;letter-spacing:1px}
 .event-date{color:#222;margin-top:8px;font-weight:600}
-.countdown #countdown{font-family:monospace;font-size:34px;font-weight: 900;letter-spacing:6px;color:var(--black)}
 
+/* Countdown: scale down + tighter spacing on phones */
+.countdown #countdown{
+	font-size: clamp(20px, 10vw, 42px);
+	letter-spacing: clamp(2px, 1.2vw, 6px);
+	word-spacing: 0;
+  }
+  
 .vinyl-art{
 	position: absolute;       /* <- needed for centering with left+transform */
   	left: 50%;
@@ -151,10 +170,10 @@ body {
   	pointer-events: none;
 }
 
-/* Slight adjustments for mobile */
-@media(max-width:767px){
-	.hero-title{font-size:40px}
-	.vinyl-art{width:520px;bottom:-80px}
-	.top-banner{height:62px}
-}
-
+/* Mobile tweaks */
+@media (max-width: 767px){
+	.hero{ padding-top: 72px; } /* match your banner height */
+	.site-subtitle{ width: clamp(180px, 60vw, 320px); }
+	.site-title{ width: clamp(240px, 78vw, 460px); transform: translateY(-4px); }
+	.vinyl-art{ bottom: -12vh; }
+  }
