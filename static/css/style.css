@@ -8,13 +8,20 @@
 /* THIS IS ONLY TO PREVENT SCROLLING REMOVE WHEN WE ADD MORE ELEMENTS */ 
 /* html, body { height: 100%; overflow: hidden; } */
 
-
 body {
 	font-family: Inter, system-ui, Arial, sans-serif;
 	background: rgb(224, 224, 224);
 	color: var(--black);
 	margin: 0;
 }
+
+body {
+  background-image: url("/static/img/wics_bg.png");
+  background-repeat: repeat;   /* Tile the image */
+  background-size: 100% auto;       /* Use original image size */
+  background-position: top center;
+}
+
 
 .site-title {
 	width: 70%;
@@ -39,10 +46,9 @@ body {
 	width: clamp(220px, 36vw, 520px);
 }
 
-.site-title{                      /* red “Hack to the Beat” */
-	width: clamp(320px, 82vw, 1280px);
-	margin-top: 0;                  /* remove -50px pull-up */
-  }
+.site-title {   /* red “Hack to the Beat” */
+  width: clamp(200px, 60vw, 900px);
+}
   
   /* 4) Give the hero breathing room below the maroon top banner */
   .hero{ padding-top: clamp(56px, 10vh, 96px); 
