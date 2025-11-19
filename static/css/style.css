@@ -125,10 +125,12 @@ body {
 .btn-register:hover{background:var(--white);color:var(--maroon)}
 
 /* Hero */
-.hero{
-	min-height:420px;
-	overflow:visible;
-	position:relative
+.hero {
+	position: relative;
+	min-height: 100vh;                 /* fill viewport */
+	padding-top: clamp(64px, 12vh, 96px);
+	padding-bottom: 32vh;              /* room for the record */
+	overflow: visible;
 }
 
 /* 1) Make the hero stack and control spacing */
@@ -156,24 +158,40 @@ body {
 	word-spacing: 0;
   }
   
-.vinyl-art{
-	position: absolute;       /* <- needed for centering with left+transform */
-  	left: 50%;
-	top: 100%;
-  	transform: translateX(-50%);
-  	bottom: -10vh;            /* adjust as you like */
-  	width: 50vw;
-  	max-width: 10900px;
-  	opacity: 0.95;
-  	z-index: 1;
-  	display: block;           /* avoids inline baseline quirks */
-  	pointer-events: none;
+  .vinyl-art {
+	position: absolute;
+	left: 50%;
+	bottom: 0;                         /* stick to bottom of hero */
+	transform: translate(-50%, 40%);    /* push it down so it hangs out */
+	width: min(520px, 70vw);           /* reasonable size */
+	max-width: 520px;
+	opacity: 0.95;
+	z-index: 1;
+	display: block;
+	pointer-events: none;
 }
 
+/* Desktop / laptop tweaks */
+@media (min-width: 992px) {
+	.hero {
+	  padding-bottom: 45vh;          /* more space under content */
+	}
+  
+	.vinyl-art {
+	  width: min(480px, 40vw);       /* a bit smaller on big screens */
+	  transform: translate(-50%, 75%); /* push it further down */
+	}
+  }  
+
+
 /* Mobile tweaks */
-@media (max-width: 767px){
-	.hero{ padding-top: 72px; } /* match your banner height */
-	.site-subtitle{ width: clamp(180px, 60vw, 320px); }
-	.site-title{ width: clamp(240px, 78vw, 460px); transform: translateY(-4px); }
-	.vinyl-art{ bottom: -12vh; }
-  }
+@media (max-width: 767px) {
+	.hero {
+		padding-top: 72px;             /* banner height */
+		padding-bottom: 28vh;          /* still give bottom space */
+	}
+	.vinyl-art {
+		transform: translate(-50%, 35%);
+		width: min(420px, 90vw);
+	}
+}
