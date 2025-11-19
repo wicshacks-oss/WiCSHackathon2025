@@ -153,6 +153,7 @@ body {
 
 /* Countdown: scale down + tighter spacing on phones */
 .countdown #countdown{
+	font-family: monospace;
 	font-size: clamp(20px, 10vw, 42px);
 	letter-spacing: clamp(2px, 1.2vw, 6px);
 	word-spacing: 0;
