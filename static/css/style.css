@@ -7,16 +7,6 @@
 }
 /* THIS IS ONLY TO PREVENT SCROLLING REMOVE WHEN WE ADD MORE ELEMENTS */ 
 /* html, body { height: 100%; overflow: hidden; } */
-/* Allow vertical scroll; hide only horizontal overflow */
-html, body {
-	height: auto;
-	overflow-y: auto;
-	overflow-x: hidden;   /* prevents tiny 100vw overhangs on phones */
-  }
-  
-
-/* --- Global/mobile sanity --- */
-* { box-sizing: border-box; } 
 
 body {
 	font-family: Inter, system-ui, Arial, sans-serif;
@@ -24,6 +14,14 @@ body {
 	color: var(--black);
 	margin: 0;
 }
+
+body {
+  background-image: url("/static/img/wics_bg.png");
+  background-repeat: repeat;   /* Tile the image */
+  background-size: 100% auto;       /* Use original image size */
+  background-position: top center;
+}
+
 
 .site-title {
 	width: 70%;
@@ -48,10 +46,9 @@ body {
 	width: clamp(220px, 36vw, 520px);
 }
 
-.site-title{                      /* red “Hack to the Beat” */
-	width: clamp(320px, 82vw, 1280px);
-	margin-top: 0;                  /* remove -50px pull-up */
-  }
+.site-title {   /* red “Hack to the Beat” */
+  width: clamp(200px, 60vw, 900px);
+}
   
   /* 4) Give the hero breathing room below the maroon top banner */
   .hero{ padding-top: clamp(56px, 10vh, 96px); 
@@ -59,14 +56,11 @@ body {
 }
 
 
-/* If you used .full-bleed, keep it from causing horizontal scroll */
+/* full-bleed section inside a .container layout */
 .full-bleed{
-	width: 100vw;
-	position: relative;
-	left: 50%;
-	right: 50%;
-	margin-left: -50vw;
-	margin-right: -50vw;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 
 
@@ -125,12 +119,10 @@ body {
 .btn-register:hover{background:var(--white);color:var(--maroon)}
 
 /* Hero */
-.hero {
-	position: relative;
-	min-height: 100vh;                 /* fill viewport */
-	padding-top: clamp(64px, 12vh, 96px);
-	padding-bottom: 32vh;              /* room for the record */
-	overflow: visible;
+.hero{
+	min-height:420px;
+	overflow:visible;
+	position:relative
 }
 
 /* 1) Make the hero stack and control spacing */
@@ -145,54 +137,30 @@ body {
 }
 .site-subtitle{ margin-top: 0; }   /* ensure no extra space */
 .site-title{    margin-top: 0; }
-.site-subtitle, .site-title { max-width: 100%; height: auto; }
 
 .hero-title{font-family:'Lobster',cursive;font-size:88px;color:var(--maroon);margin:0}
 .event-sub{font-size: 170%;font-weight:700;color:#3a3a3a;letter-spacing:1px}
 .event-date{color:#222;margin-top:8px;font-weight:600}
+.countdown #countdown{font-family:monospace;font-size:34px;font-weight: 900;letter-spacing:6px;color:var(--black)}
 
-/* Countdown: scale down + tighter spacing on phones */
-.countdown #countdown{
-	font-family: monospace;
-	font-size: clamp(20px, 10vw, 42px);
-	letter-spacing: clamp(2px, 1.2vw, 6px);
-	word-spacing: 0;
-  }
-  
-  .vinyl-art {
-	position: absolute;
-	left: 50%;
-	bottom: 0;                         /* stick to bottom of hero */
-	transform: translate(-50%, 40%);    /* push it down so it hangs out */
-	width: min(520px, 70vw);           /* reasonable size */
-	max-width: 520px;
-	opacity: 0.95;
-	z-index: 1;
-	display: block;
-	pointer-events: none;
+.vinyl-art{
+	position: absolute;       /* <- needed for centering with left+transform */
+  	left: 50%;
+	top: 100%;
+  	transform: translateX(-50%);
+  	bottom: -10vh;            /* adjust as you like */
+  	width: 50vw;
+  	max-width: 10900px;
+  	opacity: 0.95;
+  	z-index: 1;
+  	display: block;           /* avoids inline baseline quirks */
+  	pointer-events: none;
 }
 
-/* Desktop / laptop tweaks */
-@media (min-width: 992px) {
-	.hero {
-	  padding-bottom: 45vh;          /* more space under content */
-	}
-  
-	.vinyl-art {
-	  width: min(480px, 40vw);       /* a bit smaller on big screens */
-	  transform: translate(-50%, 75%); /* push it further down */
-	}
-  }  
-
-
-/* Mobile tweaks */
-@media (max-width: 767px) {
-	.hero {
-		padding-top: 72px;             /* banner height */
-		padding-bottom: 28vh;          /* still give bottom space */
-	}
-	.vinyl-art {
-		transform: translate(-50%, 35%);
-		width: min(420px, 90vw);
-	}
+/* Slight adjustments for mobile */
+@media(max-width:767px){
+	.hero-title{font-size:40px}
+	.vinyl-art{width:520px;bottom:-80px}
+	.top-banner{height:62px}
 }
+
