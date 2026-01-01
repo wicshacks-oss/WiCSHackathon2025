@@ -2,13 +2,13 @@ from flask import Flask, render_template, jsonify
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
 
-from app import app
-from flask_frozen import Freezer
+#from app import app
+#from flask_frozen import Freezer
 
 app.config['FREEZER_DESTINATION'] = 'docs'
 app.config['FREEZER_RELATIVE_URLS'] = True  # <-- add this
 
-freezer = Freezer(app)
+#freezer = Freezer(app)
 ...
 
 
