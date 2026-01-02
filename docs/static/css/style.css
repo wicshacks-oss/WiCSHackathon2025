@@ -9,9 +9,12 @@
 /* html, body { height: 100%; overflow: hidden; } */
 /* Allow vertical scroll; hide only horizontal overflow */
 html, body {
+	margin: 0;
+	padding: 0;
 	height: auto;
 	overflow-y: auto;
 	overflow-x: hidden;   /* prevents tiny 100vw overhangs on phones */
+	position: relative;
   }
   
 
@@ -23,6 +26,7 @@ body {
 	background: rgb(224, 224, 224);
 	color: var(--black);
 	margin: 0;
+	overflow: visible;
 }
 
 .site-title {
@@ -73,7 +77,8 @@ body {
 /* Navbar override: maroon background, white links */
 .navbar {
 	background:transparent!important;
-	margin-top: -4px;
+	/* margin-top: -4px; */
+	margin-top: 0px;
 }
 .navbar .navbar-brand, .navbar .nav-link{color:var(--white) !important}
 .navbar .nav-link:hover{opacity:0.9}
@@ -109,9 +114,22 @@ body {
 .card p{margin:0}
 
 /* Top banner styles */
-.top-banner{background:#6d0000;color:var(--white);height:72px;display:flex;align-items:center}
+.top-banner{
+	position: relative;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1100;
+	background:#6d0000;
+	color:var(--white);
+	height:72px;
+	display:flex;
+	align-items:center;
+	padding-left: 120px;
+}
 .top-banner .site-logo{
 	height:80px;
+	padding-left: 150px;
 }
 .top-banner .banner-title{font-family:'Lobster', cursive;font-size:34px;color:var(--white);letter-spacing:1px}
 .top-banner .small-brand{font-size:12px;opacity:0.9}
@@ -195,4 +213,122 @@ body {
 		transform: translate(-50%, 35%);
 		width: min(420px, 90vw);
 	}
+}
+
+/* the wics logo */
+.site-logo {
+  height: 48px;   /* controls logo size */
+  width: auto;    /* keeps aspect ratio */
+}
+
+@media (max-width: 768px) {
+  .site-logo {
+    height: 36px;
+  }
+}
+
+.mlh-badge-link{
+  position: absolute;
+  top: 0;
+  left: 12px;
+  width: 100px;
+  z-index: 1200;
+  display: block;
+}
+
+.mlh-badge{
+  width: 130px;
+  height: auto;
+  display: block;
+  padding-left: 30px;
+}
+
+.mlh-badge img {
+  position: fixed;
+  top: 0;
+  left: 20px;
+  height: 200px;
+  z-index: 1200;
+} 
+
+/* make collapsed menu full-width */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    width: 100%;
+    margin-top: 8px;   /* drops below the toggler */
+  }
+
+  .navbar-nav {
+    width: 100%;
+  }
+
+  .navbar-nav .nav-link {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+/* collapsed menu */
+
+.top-nav {
+	position: relative;
+}
+
+@media (max-width: 991.98px) {
+
+  /* anchor for absolute dropdown */
+  .top-nav {
+    position: relative;
+  }
+
+  /* right-side dropdown panel that moves with the navbar */
+  .top-nav .navbar-collapse.show,
+  .top-nav .navbar-collapse.collapsing {
+    position: absolute;
+    top: calc(100% + 10px);              /* directly under navbar */
+    right: 0;
+    left: auto;
+
+    width: clamp(260px, 25vw, 360px);  /* ~25% */
+    max-width: 90vw;
+
+    background: #6d0000;
+    padding: 16px;
+    z-index: 2000;
+
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+  }
+
+  /* right-align content inside */
+  .top-nav .navbar-nav {
+    width: 100%;
+    margin-left: auto;
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  .top-nav .nav-link {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .top-nav .btn-register {
+    margin-left: auto;
+    margin-top: 12px;
+  }
+}
+
+
+
+
+.top-banner {
+  overflow: visible;
+}
+
+.about-art {
+	width: 300px;
+	padding-bottom: 50px;
 }
