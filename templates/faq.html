@@ -1,13 +1,11 @@
-{% extends 'base.html' %}
 
-{% block content %}
 <h2>FAQ</h2>
 <div class="accordion" id="faqAcc">
   <div class="accordion-item">
     <h2 class="accordion-header" id="q1">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c1">What is a Hackathon?</button>
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c1">What is a Hackathon?</button>
     </h2>
-    <div id="c1" class="accordion-collapse collapse show" data-bs-parent="#faqAcc">
+    <div id="c1" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
       <div class="accordion-body">A hackathon is an event where people work in teams to solve problems or build projects, usually using technology. The event often includes different prize tracks that focus on specific themes or challenges. At the end, teams present their projects, and winners are selected based on set criteria.</div>
     </div>
   </div>
@@ -17,7 +15,7 @@
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c2">Who can participate?</button>
     </h2>
     <div id="c2" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
-      <div class="accordion-body">Anyone who is interested in technology and coding can participate. We especially welcome first-time hackers and underrepresented groups in tech.</div>
+      <div class="accordion-body">All high school, undergraduate, and graduate students aged 18 and over are welcome to participate in the Hackathon! Students from a wide range of disciplines, from Business to STEM, are encouraged to join. Anyone interested in technology and coding can participate, and we especially welcome first-time hackers and underrepresented groups in tech.</div>
     </div>
   </div>
 
@@ -40,7 +38,13 @@
     </div>
   </div>
 
-
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="q5">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c5">Do I need a team?</button>
+    </h2>
+    <div id="c5" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+      <div class="accordion-body">No, you don’t have to! However, if you’re looking to form a team of up to four people, there will be Discord channels and a Day 1 workshop to help with team formation.</div>
+    </div>
+  </div>
 
 </div>
-{% endblock %}

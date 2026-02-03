@@ -15,6 +15,7 @@ html, body {
 	overflow-y: auto;
 	overflow-x: hidden;   /* prevents tiny 100vw overhangs on phones */
 	position: relative;
+	scroll-behavior: smooth;
   }
   
 
@@ -331,4 +332,108 @@ body {
 .about_svg {
 	width: 300px;
 	padding-bottom: 50px;
+}
+
+
+/* change the color to red ish for faq*/
+/* FAQ accordion color override */
+.accordion-button:not(.collapsed) {
+  background-color: rgba(128, 0, 0, 0.08); /* light maroon tint */
+  color: var(--maroon);
+}
+
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.2rem rgba(128, 0, 0, 0.35); /* red glow instead of blue */
+  border-color: var(--maroon);
+}
+
+/* Change the little arrow icon color */
+.accordion-button::after {
+  filter: hue-rotate(330deg);
+}
+
+/* Hover effect */
+.accordion-button:hover {
+  background-color: rgba(128, 0, 0, 0.05);
+}
+
+.site-footer {
+  background: #6d0000;
+  color: white;
+  padding: 14px 0;
+  width: 100%;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+}
+
+.insta-link {
+  color: white;
+  text-decoration: none;
+}
+
+.insta-link:hover {
+  color: #ffdada;
+  text-decoration: underline;
+}
+
+.fa {
+  background: transparent;
+  color: #800000; /* your maroon */
+  font-size: 70px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  color: #e47373; /* darker maroon on hover */
+  opacity: 1;
+}
+
+/* Set a specific color for each brand */
+
+.fa-instagram {
+  color: white;
+}
+
+.fa-discord {
+  color: white;
+}
+
+.social-icon i {
+  font-size: 48px;        /* size */
+  color: #c91414;        /* maroon */
+  margin: 0 12px;
+  transition: 0.2s ease;
+}
+
+.social-icon i:hover {
+  color: #e3c6c6;
+  transform: scale(1.1);
+}
+
+.text-box{
+	font-size: 120%;
+}
+
+/* FAQ title */
+#faq h2 {
+  font-size: 2.2rem;   /* adjust this */
+}
+
+/* Question buttons */
+#faq .accordion-button {
+  font-size: 1.15rem; /* questions */
+}
+
+/* Answer text */
+#faq .accordion-body {
+  font-size: 1.2rem;    /* answers */
 }
