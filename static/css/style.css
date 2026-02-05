@@ -183,9 +183,17 @@ body {
 	font-size: clamp(20px, 10vw, 42px);
 	letter-spacing: clamp(2px, 1.2vw, 6px);
 	word-spacing: 0;
+}
+
+@media (max-width: 767px) {
+  .countdown #countdown {
+      font-family: monospace;
+    font-size: 22px;
+    letter-spacing: 2px;
   }
+}
   
-  .vinyl-art {
+.vinyl-art {
 	position: absolute;
 	left: 50%;
 	bottom: 0;                         /* stick to bottom of hero */
