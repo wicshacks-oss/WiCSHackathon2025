@@ -30,6 +30,13 @@ body {
 	overflow: visible;
 }
 
+body {
+  background-image: url("/static/img/wics_bg.png");
+  background-repeat: repeat;   /* Tile the image */
+  background-size: 100% auto;       /* Use original image size */
+  background-position: top center;
+}
+
 .site-title {
 	width: 70%;
 	display: block;
@@ -54,7 +61,7 @@ body {
 }
 
 .site-title{                      /* red “Hack to the Beat” */
-	width: clamp(320px, 82vw, 1280px);
+	width: clamp(200px, 60vw, 900px);
 	margin-top: 0;                  /* remove -50px pull-up */
   }
   
@@ -148,7 +155,7 @@ body {
 	position: relative;
 	min-height: 100vh;                 /* fill viewport */
 	padding-top: clamp(64px, 12vh, 96px);
-	padding-bottom: 32vh;              /* room for the record */
+	padding-bottom: 22vh;              /* room for the record */
 	overflow: visible;
 }
 
@@ -176,9 +183,17 @@ body {
 	font-size: clamp(20px, 10vw, 42px);
 	letter-spacing: clamp(2px, 1.2vw, 6px);
 	word-spacing: 0;
+}
+
+@media (max-width: 767px) {
+  .countdown #countdown {
+      font-family: monospace;
+    font-size: 22px;
+    letter-spacing: 2px;
   }
+}
   
-  .vinyl-art {
+.vinyl-art {
 	position: absolute;
 	left: 50%;
 	bottom: 0;                         /* stick to bottom of hero */
@@ -194,7 +209,7 @@ body {
 /* Desktop / laptop tweaks */
 @media (min-width: 992px) {
 	.hero {
-	  padding-bottom: 45vh;          /* more space under content */
+	  padding-bottom: 30vh;          /* more space under content */
 	}
   
 	.vinyl-art {
@@ -334,6 +349,11 @@ body {
 	padding-bottom: 50px;
 }
 
+.about-inner {
+  width: clamp(200px, 60vw, 900px); /* SAME as .site-title */
+  margin: 0 auto;                  /* center it */
+}
+
 
 /* change the color to red ish for faq*/
 /* FAQ accordion color override */
@@ -426,6 +446,7 @@ body {
 /* FAQ title */
 #faq h2 {
   font-size: 2.2rem;   /* adjust this */
+    text-align: center;
 }
 
 /* Question buttons */
