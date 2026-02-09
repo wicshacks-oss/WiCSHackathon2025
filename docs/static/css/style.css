@@ -24,17 +24,14 @@ html, body {
 
 body {
 	font-family: Inter, system-ui, Arial, sans-serif;
-	background: rgb(224, 224, 224);
 	color: var(--black);
 	margin: 0;
 	overflow: visible;
-}
 
-body {
-  background-image: url("/static/img/wics_bg.png");
-  background-repeat: repeat;   /* Tile the image */
-  background-size: 100% auto;       /* Use original image size */
-  background-position: top center;
+    background-image: url("../img/wics_bg.png");
+    background-repeat: repeat;   /* Tile the image */
+    background-size: 100% auto;       /* Use original image size */
+    background-position: top center;
 }
 
 .site-title {
