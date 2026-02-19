@@ -455,3 +455,38 @@ body {
 #faq .accordion-body {
   font-size: 1.2rem;    /* answers */
 }
+
+.schedule-containter {
+  display: flex;
+  flex-direction: column;   /* stack vertically */
+  align-items: center;      /* center horizontally */
+  gap: 20px;
+}
+
+.schedule {
+  width: 100%;
+  max-width: 900px;         /* prevents it from being too huge on large screens */
+  height: auto;             /* keeps aspect ratio */
+  display: block;
+  margin: 0 auto;
+}
+
+.sponsors-container {
+  display: flex;
+  flex-direction: column;   /* stack vertically */
+  align-items: center;      /* center horizontally */
+  gap: 20px;
+}
+
+.sponsors {
+  width: 100%;
+  max-width: 900px;         /* prevents it from being too huge on large screens */
+  height: auto;             /* keeps aspect ratio */
+  display: block;
+  margin: 0 auto;
+}
+
+.sponsors-title {
+  width: 80%;
+  max-width: 550px;
+}

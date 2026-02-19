@@ -25,9 +25,9 @@
 
     <div class="hero-ctas mt-4">
       <!-- <a class="btn btn-primary" href="/schedule">See Schedule</a> -->
-      <a class="btn btn-primary" href="{{ url_for('schedule') }}">See Schedule</a>
+      <a class="btn btn-primary" href="{{ url_for('home') }}#schedule-containter">See Schedule</a>
       <!-- <a class="btn btn-outline-secondary" href="/faq">FAQ</a> -->
-      <a class="btn btn-outline-secondary" href="{{ url_for('faq') }}">FAQ</a>
+      <a class="btn btn-outline-secondary" href="{{ url_for('home') }}#faq">FAQ</a>
     </div>
   </div>
 
@@ -107,6 +107,16 @@
     </div>
 
   </div>
+</section>
+
+<section id="schedule-containter" class="container my-5">
+  <img src="/static/img/schedulept1.png" class="schedule">
+  <img src="/static/img/schedulept2.png" class="schedule">
+</section>
+
+<section id="sponsors-container" class="sponsors-container">
+  <img src="/static/img/sponsors-title.png" class="sponsors-title">
+  <img src="/static/img/sponsors.png" class="sponsors">
 </section>
 
 <section id="faq" class="container my-5">
